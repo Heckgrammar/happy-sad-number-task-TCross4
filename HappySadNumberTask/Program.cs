@@ -25,6 +25,29 @@
             //The program should take a number as input and output whether the number is happy or sad
             //test your program with the inputs of 19 and 20
             //show your output in the readme file
+
+            int num = 0;
+        Console.WriteLine("Input a number.");
+        string input = Console.ReadLine();
+        int num1 = Convert.ToInt16(input[0]);
+        int num2 = Convert.ToInt16(input[1]);
+        int[] count = new int[100];
+        for (int i = 0; i < 100; i++)
+        {
+            num = num1*num1+num2*num2;
+            count[i] = num;
+            input = Convert.ToString(num);
+            num1 = Convert.ToInt16(input[0]);
+            num2 = Convert.ToInt16(input[1]);
+        }
+        if (count[99] == 1)
+        {
+            Console.WriteLine("Happy.");
+        }
+        else if(count[99] == count[98])
+        {
+            Console.WriteLine("Sad.");
+        }
         }
     }
 }
